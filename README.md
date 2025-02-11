@@ -64,7 +64,5 @@ Consulta el archivo `LearningApp-Documentacion.pdf` para más detalles técnicos
 Este proyecto ha sido desarrollado como parte del curso de **Prácticas de Desarrollo de Software** en la Universidad de Murcia (Curso 2025).
 
 ### 👥 Equipo de Desarrollo
-- [Desarrollador 1](https://github.com/Desarrollador1)
-- [Desarrollador 2](https://github.com/Desarrollador2)
-- [Desarrollador 3](https://github.com/Desarrollador3)
+
 
