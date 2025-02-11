@@ -35,7 +35,7 @@ La aplicación sigue una estructura modular basada en tres capas:
 ## 🧩 Instalación
 **Clonar el repositorio**:
 ```bash
-git clone https://github.com/tu-repositorio/LearningApp_2025.git
+git clone https://github.com/StoneySpring688/PDS.git
 cd LearningApp_2025
 ```
 
@@ -54,14 +54,12 @@ java -jar target/LearningApp.jar
 
 ## 📖 Documentación
 La documentación del proyecto incluye:
-- Modelado de requisitos y diagramas de clases.
 - Manual de usuario.
-- Explicaciones de diseño y patrones utilizados.
 
-Consulta el archivo `LearningApp-Documentacion.pdf` para más detalles técnicos.
+Consulta el directorio `Documentation` para más detalles técnicos.
 
 ## 🏆 Créditos
-Este proyecto ha sido desarrollado como parte del curso de **Prácticas de Desarrollo de Software** en la Universidad de Murcia (Curso 2025).
+Este proyecto ha sido desarrollado como parte del curso de **Procesos de Desarrollo de Software** en la Universidad de Murcia (Curso 2025).
 
 ### 👥 Equipo de Desarrollo
   - [StoneySpring688](https://github.com/StoneySpring688)
