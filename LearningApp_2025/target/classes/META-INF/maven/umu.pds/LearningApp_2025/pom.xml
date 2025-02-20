@@ -58,6 +58,26 @@
     	<artifactId>swing-datetime-picker</artifactId>
     	<version>2.0.0</version>
 	</dependency>
+    <dependency>
+    	<groupId>umu.tds</groupId>
+    	<artifactId>AppChat-24-25</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+    </dependency>
+    
+     <!-- Jackson para JSON -->
+    <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.15.0</version>
+    </dependency>
+
+    <!-- SnakeYAML para YAML -->
+    <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>2.0</version>
+    </dependency>
+    
   </dependencies>
 
   <build>
