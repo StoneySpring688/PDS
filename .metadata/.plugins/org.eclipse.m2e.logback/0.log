@@ -508,3 +508,11 @@
 2025-02-20 17:50:38,838 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
 2025-02-20 17:52:53,730 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/main/resources
 2025-02-20 17:52:53,732 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
+2025-02-20 17:56:07,551 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/main/resources
+2025-02-20 17:56:07,553 [Worker-27: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
+2025-02-20 17:56:17,130 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/main/resources
+2025-02-20 17:56:17,133 [Worker-1: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
+2025-02-20 17:56:35,473 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/main/resources
+2025-02-20 17:56:35,476 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
+2025-02-20 17:56:49,448 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/main/resources
+2025-02-20 17:56:49,450 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
