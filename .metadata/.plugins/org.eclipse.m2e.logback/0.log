@@ -506,3 +506,5 @@
 2025-02-20 17:50:25,829 [Worker-19: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
 2025-02-20 17:50:38,836 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/main/resources
 2025-02-20 17:50:38,838 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
+2025-02-20 17:52:53,730 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/main/resources
+2025-02-20 17:52:53,732 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/stoneyspring/Documentos/PDS/LearningApp_2025/src/test/resources
