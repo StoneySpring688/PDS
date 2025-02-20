@@ -1,0 +1,394 @@
+package umu.pds.LearningApp_2025.ui;
+
+import java.awt.Color;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.time.LocalDate;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import raven.datetime.DatePicker;
+import raven.datetime.DateSelectionAble;
+import raven.datetime.event.DateSelectionEvent;
+import raven.datetime.event.DateSelectionListener;
+import umu.pds.LearningApp_2025.controllers.UIController;
+
+public class RegisterPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JTextField textFieldName;
+	private DatePicker datePicker;
+	private JFormattedTextField editor;
+	private JTextField textFieldEmail;
+	private JPasswordField password1;
+	private JPasswordField password2;
+	protected JLabel backButton;
+	
+	
+	private final Color defaultDark = new Color(40, 43, 48);
+	private final Color Gray = new Color(64, 68, 75);
+
+	public RegisterPanel() {
+		setBackground(this.Gray);
+		setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setLayout(null);
+		
+		// Botón o etiqueta para cerrar la ventana
+		JLabel closeButton = new JLabel("");
+		closeButton.setIcon(new ImageIcon(RegisterPanel.class.getResource("/assets/UI_Exit.png")));
+		closeButton.setForeground(new Color(241, 57, 83));
+		closeButton.setBounds(685, 2, 33, 33);
+		closeButton.setBackground(Color.WHITE);
+		this.add(closeButton);
+				
+		closeButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				System.exit(0); // Cierra la aplicación
+				}
+			});
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(this.defaultDark);
+		panel.setBounds(0, 0, 346, 420);
+		this.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblDecoration1 = new JLabel("");
+		lblDecoration1.setIcon(new ImageIcon(RegisterPanel.class.getResource("/assets/UI_ChapterIcon_MondstadtResized.png")));
+		lblDecoration1.setBounds(141, 4, 64, 64);
+		panel.add(lblDecoration1);
+		
+		JLabel lblDecoration2 = new JLabel("");
+		lblDecoration2.setIcon(new ImageIcon(RegisterPanel.class.getResource("/assets/UI_ChapterIcon_LiyueResized.png")));
+		lblDecoration2.setBounds(141, 72, 64, 64);
+		panel.add(lblDecoration2);
+		
+		JLabel lblDecoration3 = new JLabel("");
+		lblDecoration3.setIcon(new ImageIcon(RegisterPanel.class.getResource("/assets/UI_ChapterIcon_InazumaResized.png")));
+		lblDecoration3.setBounds(141, 140, 64, 64);
+		panel.add(lblDecoration3);
+		
+		JLabel lblDecoration4 = new JLabel("");
+		lblDecoration4.setIcon(new ImageIcon(RegisterPanel.class.getResource("/assets/UI_ChapterIcon_SumeruResized.png")));
+		lblDecoration4.setBounds(141, 208, 64, 64);
+		panel.add(lblDecoration4);
+		
+		JLabel lblDecoration5 = new JLabel("");
+		lblDecoration5.setIcon(new ImageIcon(RegisterPanel.class.getResource("/assets/UI_ChapterIcon_FontaineResized.png")));
+		lblDecoration5.setBounds(141, 276, 64, 64);
+		panel.add(lblDecoration5);
+		
+		JLabel lblDecoration6 = new JLabel("");
+		lblDecoration6.setIcon(new ImageIcon(RegisterPanel.class.getResource("/assets/UI_ChapterIcon_NatlanResized.png")));
+		lblDecoration6.setBounds(141, 344, 64, 64);
+		panel.add(lblDecoration6);
+		
+		backButton = new JLabel("");
+		backButton.setIcon(new ImageIcon(RegisterPanel.class.getResource("/assets/UI_Icon_RoleCombat_Com_Back.png")));
+		backButton.setBounds(0, 0, 42, 42);
+		backButton.addMouseListener(new MouseAdapter() {
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+		    	UIController.getUnicaInstancia().showLogin();
+		    	reset();
+		    }
+		});
+		panel.add(backButton);
+		
+		JButton RegisterButton = new JButton("Register");
+		RegisterButton.setForeground(Color.WHITE);
+		RegisterButton.setBackground(new Color(241, 57, 83));
+		RegisterButton.setBounds(419, 360, 187, 35); // x = 370+(285/2)-(187/2)
+		RegisterButton.addActionListener(e -> doRegister());
+		this.add(RegisterButton);
+		
+		textFieldName = new JTextField();
+		textFieldName.setBounds(370, 25, 285, 30);
+		textFieldName.setBackground(this.Gray);
+		textFieldName.setCaretColor(Color.WHITE);
+		textFieldName.setForeground(Color.WHITE);
+		///textFieldName.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
+		textFieldName.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (textFieldName.getForeground().equals(Color.RED)) {
+                	textFieldName.setText(""); // Borrar el mensaje de error
+                	textFieldName.setForeground(Color.WHITE); // Restaurar color normal
+                }
+            }
+        });
+		this.add(textFieldName);
+		textFieldName.setColumns(10);
+		
+		JLabel lblName = new JLabel("Name");
+		lblName.setBounds(370, 10, 40, 15);
+		lblName.setForeground(Color.WHITE);
+		this.add(lblName);
+		
+		/*
+		textFieldLastName = new JTextField();
+		textFieldLastName.setBounds(370, 80, 285, 30);
+		textFieldLastName.setBackground(this.Gray);
+		textFieldLastName.setCaretColor(Color.WHITE);
+		textFieldLastName.setForeground(Color.WHITE);
+		//textFieldLastName.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
+		this.add(textFieldLastName);
+		textFieldLastName.setColumns(10);
+		*/
+		
+		JLabel lblDate = new JLabel("Birth Date");
+		lblDate.setBounds(370, 62, 70, 20);
+		lblDate.setForeground(Color.WHITE);
+		this.add(lblDate);
+		
+		
+		editor = new JFormattedTextField();
+		editor.setBounds(370, 80, 285, 30);
+		editor.setBackground(this.Gray);
+		editor.setCaretColor(Color.WHITE);
+		editor.setForeground(Color.WHITE);
+		editor.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (editor.getForeground().equals(Color.RED)) {
+                	editor.setForeground(Color.WHITE); // Restaurar color normal
+                }
+            }
+        });
+		
+		this.datePicker  = new DatePicker();
+		this.datePicker.setEditor(editor);
+		this.datePicker.setDateSelectionAble(new DateSelectionAble() {
+			
+			@Override
+			public boolean isDateSelectedAble(LocalDate date) {
+				return !date.isAfter(LocalDate.now());
+			}
+		});
+		
+		this.datePicker.addDateSelectionListener(new DateSelectionListener() {
+			
+			@Override
+			public void dateSelected(DateSelectionEvent dateSelectionEvent) {
+				datePicker.closePopup();
+				/*
+				DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+				LocalDate date = datePicker.getSelectedDate();
+				if(date != null) {
+					System.out.println("[DEBUG]" + df.format(date));
+				}
+				*/
+			}
+		});
+		
+		this.add(editor);	
+		
+		textFieldEmail = new JTextField();
+		textFieldEmail.setBounds(370, 135, 285, 30);
+		textFieldEmail.setBackground(this.Gray);
+		textFieldEmail.setCaretColor(Color.WHITE);
+		textFieldEmail.setForeground(Color.WHITE);
+		//textFieldPhone.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
+		textFieldEmail.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (textFieldEmail.getForeground().equals(Color.RED)) {
+                	textFieldEmail.setText(""); // Borrar el mensaje de error
+                	textFieldEmail.setForeground(Color.WHITE); // Restaurar color normal
+                }
+            }
+        });
+		this.add(textFieldEmail);
+		textFieldEmail.setColumns(10);
+		
+		JLabel lblPhone = new JLabel("Email");
+		lblPhone.setBounds(370, 117, 50, 20);
+		lblPhone.setForeground(Color.WHITE);
+		this.add(lblPhone);
+		
+		JRadioButton rdbtnshowPassword1 = new JRadioButton("show Password");
+		rdbtnshowPassword1.setBackground(this.Gray);
+		rdbtnshowPassword1.setForeground(Color.WHITE);
+		rdbtnshowPassword1.setBounds(370, 225, 130, 25);
+		rdbtnshowPassword1.addItemListener (e -> {
+			if(rdbtnshowPassword1.isSelected()) {
+				password1.setEchoChar((char)0);
+			}else {
+				password1.setEchoChar('•');
+			}
+		});
+		this.add(rdbtnshowPassword1);
+		
+		JRadioButton rdbtnshowPassword2 = new JRadioButton("show Password");
+		rdbtnshowPassword2.setBackground(this.Gray);
+		rdbtnshowPassword2.setForeground(Color.WHITE);
+		rdbtnshowPassword2.setBounds(525, 225, 130, 25);
+		rdbtnshowPassword2.addItemListener (e -> {
+			if(rdbtnshowPassword2.isSelected()) {
+				password2.setEchoChar((char)0);
+			}else {
+				password2.setEchoChar('•');
+			}
+		});
+		this.add(rdbtnshowPassword2);
+		
+		password1 = new JPasswordField();
+		password1.setBackground(this.Gray);
+		password1.setCaretColor(Color.WHITE);
+		password1.setForeground(Color.WHITE);
+		//password1.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
+		password1.setColumns(10);
+		password1.setBounds(370, 190, 130, 30);
+		password1.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (password1.getForeground().equals(Color.RED)) {
+                	password1.setText(""); // Borrar el mensaje de error
+                	password1.setForeground(Color.WHITE); // Restaurar color normal
+                	if(!rdbtnshowPassword1.isSelected()) password1.setEchoChar('•');
+                	password2.setText(""); // Borrar el mensaje de error
+                	password2.setForeground(Color.WHITE); // Restaurar color normal
+                	if(!rdbtnshowPassword2.isSelected()) password2.setEchoChar('•');
+                }
+            }
+        });
+		this.add(password1);
+		
+		JLabel lblPassword1 = new JLabel("Password");
+		lblPassword1.setBounds(370, 172, 70, 20);
+		lblPassword1.setForeground(Color.WHITE);
+		this.add(lblPassword1);
+		
+		password2 = new JPasswordField();
+		password2.setBackground(this.Gray);
+		password2.setCaretColor(Color.WHITE);
+		password2.setForeground(Color.WHITE);
+		//password2.setBorder(new LineBorder(Color.LIGHT_GRAY, 1));
+		password2.setColumns(10);
+		password2.setBounds(525, 190, 130, 30);
+		password2.addFocusListener(new FocusAdapter() {
+            @Override
+            public void focusGained(FocusEvent e) {
+                if (password2.getForeground().equals(Color.RED)) {
+                	password1.setText(""); // Borrar el mensaje de error
+                	password1.setForeground(Color.WHITE); // Restaurar color normal
+                	if(!rdbtnshowPassword1.isSelected()) password1.setEchoChar('•');
+                	password2.setText(""); // Borrar el mensaje de error
+                	password2.setForeground(Color.WHITE); // Restaurar color normal
+                	if(!rdbtnshowPassword2.isSelected()) password2.setEchoChar('•');
+                }
+            }
+        });
+		this.add(password2);
+		
+		JLabel lblPassword2 = new JLabel("Repeat Password");
+		lblPassword2.setBounds(525, 172, 120, 20);
+		lblPassword2.setForeground(Color.WHITE);
+		this.add(lblPassword2);
+		
+	}
+	
+	public String getName() {
+		return this.textFieldName.getText();
+	}
+	
+	public String getEmail() {
+		return this.textFieldEmail.getText();
+	}
+	
+	/**
+	 * @return devuelve null si las contraseñas son distintas o de longitud menor que 5*/
+	public String getPasswd() {
+		return String.copyValueOf(this.password1.getPassword()).equals(String.copyValueOf(this.password2.getPassword())) ? String.copyValueOf(this.password1.getPassword()) : null;
+	}
+	
+	/**
+	 * @return devuelve null si la fecha no es valida*/
+	public String getBirthDate() {
+		//System.out.println("[DEBUG] "+ this.datePicker.getSelectedDateAsString());
+		return this.datePicker.getSelectedDateAsString();
+	}
+	
+	public JLabel getBackButton() {
+		return this.backButton;
+	}
+	
+	protected void reset() {
+		this.textFieldName.setText("");
+		this.datePicker.clearSelectedDate();
+		this.editor.setForeground(Color.WHITE);
+		this.textFieldEmail.setText("");
+		this.password1.setText("");
+		this.password2.setText("");
+		
+	}
+	
+	private void doRegister() {
+		
+		//System.out.println("[DEBUG] doRegister");
+		
+		String email = this.getEmail();
+		String birthDate = this.getBirthDate();
+		String nombre = this.getName();
+		String passwd = this.getPasswd();
+		//System.out.println(passwd);
+		
+		UIController.getUnicaInstancia().doRegister(nombre, email, passwd, birthDate);
+		
+	}
+	
+	public void Errors(byte code) {
+		//System.out.println("[DEBUG] Errors" + code);
+		switch (code) {
+		case 1: {
+			this.textFieldName.setForeground(Color.RED);
+			this.textFieldName.setText("invalid name");
+			break;
+		}
+		case 2: {
+			//System.err.println("[Error] : El valor no es una contraseña válida.");
+		    this.password1.setForeground(Color.RED);
+		    this.password2.setForeground(Color.RED);
+            this.password1.setText("not match");
+            this.password2.setText("not match");
+            this.password1.setEchoChar((char)0);
+            this.password2.setEchoChar((char)0);
+            break;
+		}
+		case 3: {
+			//System.err.println("[Error] : El valor no es una contraseña válida.");
+		    this.password1.setForeground(Color.RED);
+		    this.password2.setForeground(Color.RED);
+            this.password1.setText("invalid password");
+            this.password2.setText("invalid password");
+            this.password1.setEchoChar((char)0);
+            this.password2.setEchoChar((char)0);
+            break;
+		}
+		case 4: {
+			//System.err.println("[Error] : El valor no es un numero válido.");
+			this.textFieldEmail.setForeground(Color.RED);
+			this.textFieldEmail.setText("invalid email");
+			break;
+		}
+		case 5: {
+			//System.err.println("[Error] : El valor no es una fecha válida.");
+			this.editor.setForeground(Color.RED);
+			break;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + code);
+		}
+	}
+	
+}

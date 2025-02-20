@@ -1,0 +1,12 @@
+package umu.pds.LearningApp_2025.controllers;
+
+public class MainController {
+	
+	
+	// singleton
+	private static UIController unicaInstancia = null;
+				
+	public static UIController getUnicaInstancia() {
+		return unicaInstancia == null ? new UIController() : unicaInstancia;
+	}
+}

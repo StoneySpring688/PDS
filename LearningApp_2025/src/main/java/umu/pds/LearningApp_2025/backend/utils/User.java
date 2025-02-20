@@ -1,6 +1,6 @@
 package umu.pds.LearningApp_2025.backend.utils;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user")

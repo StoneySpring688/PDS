@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import java.io.File;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

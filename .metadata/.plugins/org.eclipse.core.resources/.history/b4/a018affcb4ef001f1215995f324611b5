@@ -1,0 +1,10 @@
+package umu.pds.LearningApp_2025.controllers;
+
+public class UIController {
+
+	public static void showRegister() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,39 @@
+package umu.pds.LearningApp_2025.controllers;
+
+import umu.pds.LearningApp_2025.ui.AppFrame;
+
+public class UIController {
+	
+	private AppFrame appFrame;
+
+	// singleton
+	private static UIController unicaInstancia = null;
+			
+	public static UIController getUnicaInstancia() {
+		if (unicaInstancia == null)
+			return new ContactoDAO();
+		else
+			return unicaInstancia;
+			}
+	
+	//constructor
+	
+	public UIController() {
+		init();
+	}
+	
+	private void init() {
+		
+	}
+	
+	public void showRegister() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void showLogin() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

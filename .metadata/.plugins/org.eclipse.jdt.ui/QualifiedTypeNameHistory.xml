@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="umu.pds.LearningApp_2025.ui.AppFrame"/>
+    <fullyQualifiedTypeName name="umu.pds.LearningApp_2025.controllers.UIController"/>
+    <fullyQualifiedTypeName name="umu.pds.LearningApp_2025.controllers.MainController"/>
+</qualifiedTypeNameHistroy>

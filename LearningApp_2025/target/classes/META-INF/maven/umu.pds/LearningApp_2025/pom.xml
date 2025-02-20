@@ -58,12 +58,13 @@
     	<artifactId>swing-datetime-picker</artifactId>
     	<version>2.0.0</version>
 	</dependency>
-    <dependency>
-    	<groupId>umu.tds</groupId>
-    	<artifactId>AppChat-24-25</artifactId>
-    	<version>0.0.1-SNAPSHOT</version>
-    </dependency>
-    
+    <!-- JPA -->
+	<dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    	<version>6.2.7.Final</version>
+	</dependency>
+
      <!-- Jackson para JSON -->
     <dependency>
         <groupId>com.fasterxml.jackson.core</groupId>

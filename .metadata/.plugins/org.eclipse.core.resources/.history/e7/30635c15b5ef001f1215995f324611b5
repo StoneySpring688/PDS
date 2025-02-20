@@ -1,0 +1,19 @@
+package umu.pds.LearningApp_2025.controllers;
+
+import umu.pds.LearningApp_2025.ui.AppFrame;
+
+public class UIController {
+	
+	private AppFrame appFrame;
+
+	public static void showRegister() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static void showLogin() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
